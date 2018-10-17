@@ -1,12 +1,12 @@
 # review-point
 
-### 개발환경
+## 개발환경
 - Spring Boot
 - Java 8
 - JPA
 - MySQL 5.7
 
-### DDL
+## DDL
 ```mysql
 -- 테이블 생성
 create table photo (
@@ -83,7 +83,7 @@ alter table review_attached_photos add constraint FK5s8wmfnwaynx77eerdh5iqftp fo
 ```
 
 
-### API
+## API
 
 - 포인트 적립
 ```http
@@ -121,5 +121,5 @@ GET /api/points/{userId}
 }
 ```
 
-### 기타
+## 기타
 제출한 코드는 동작 테스트가 되지 않았고 컴파일만 됩니다. 참고 부탁드립니다.
