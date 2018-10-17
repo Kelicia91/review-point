@@ -1,6 +1,12 @@
 # review-point
 
-### DDL (MySQL 5.7)
+### 개발환경
+- Spring Boot
+- Java 8
+- JPA
+- MySQL 5.7
+
+### DDL
 ```mysql
 -- 테이블 생성
 create table photo (
