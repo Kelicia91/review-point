@@ -75,3 +75,45 @@ alter table review add constraint fk_review_writer foreign key (writer_id) refer
 alter table review_attached_photos add constraint FK9l09dnc6bc1m9a4kifttdjvcq foreign key (attached_photos_id) references photo (id)
 alter table review_attached_photos add constraint FK5s8wmfnwaynx77eerdh5iqftp foreign key (review_id) references review (id)
 ```
+
+
+### API
+
+- 포인트 적립
+```http
+# 기본 점수 적립
+PUT /api/points/{userId}/increment
+# 기본 점수 차감
+PUT /api/points/{userId}/decrement
+# 보너스 점수 적립
+PUT /api/points/{userId}/increment/bonus
+# 보너스 점수 차감
+PUT /api/points/{userId}/decrement/bonus
+
+# RequestBody
+{
+    "amount": 1,
+    "contentType": "REVIEW",
+    "contentId": "240a0658-dc5f-4878-9381-ebb7b2667772",
+}
+
+# ResponseBody
+{
+    "point": 123,
+    "bonus": 45
+}
+```
+
+- 포인트 조회
+```http
+GET /api/points/{userId}
+
+# ResponseBody
+{
+    "point": 123,
+    "bonus": 45
+}
+```
+
+### 기타
+제출한 코드는 동작 테스트가 되지 않았고 컴파일만 됩니다. 참고 부탁드립니다.
