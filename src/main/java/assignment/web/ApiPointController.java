@@ -23,22 +23,22 @@ public class ApiPointController {
     }
 
     @PutMapping("/increment")
-    public ResponseEntity<Point> increment(@Valid @RequestBody PointDTO pointDTO) {
-        return ResponseEntity.ok(pointService.increment(pointDTO));
+    public ResponseEntity<Point> increment(@PathVariable UUID userId, @Valid @RequestBody PointDTO pointDTO) {
+        return ResponseEntity.ok(pointService.increment(userId, pointDTO));
     }
 
     @PutMapping("/decrement")
-    public ResponseEntity<Point> decrement(@Valid @RequestBody PointDTO pointDTO) {
-        return ResponseEntity.ok(pointService.decrement(pointDTO));
+    public ResponseEntity<Point> decrement(@PathVariable UUID userId, @Valid @RequestBody PointDTO pointDTO) {
+        return ResponseEntity.ok(pointService.decrement(userId, pointDTO));
     }
 
     @PutMapping("/increment/bonus")
-    public ResponseEntity<Point> incrementBonus(@Valid @RequestBody PointDTO pointDTO) {
-        return ResponseEntity.ok(pointService.incrementBonus(pointDTO));
+    public ResponseEntity<Point> incrementBonus(@PathVariable UUID userId, @Valid @RequestBody PointDTO pointDTO) {
+        return ResponseEntity.ok(pointService.incrementBonus(userId, pointDTO));
     }
 
     @PutMapping("/decrement/bonus")
-    public ResponseEntity<Point> decrementBonus(@Valid @RequestBody PointDTO pointDTO) {
-        return ResponseEntity.ok(pointService.decrementBonus(pointDTO));
+    public ResponseEntity<Point> decrementBonus(@PathVariable UUID userId, @Valid @RequestBody PointDTO pointDTO) {
+        return ResponseEntity.ok(pointService.decrementBonus(userId, pointDTO));
     }
 }

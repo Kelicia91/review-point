@@ -33,23 +33,23 @@ public class PointService {
                 .orElseThrow(EntityNotFoundException::new);
     }
 
-    public Point increment(PointDTO dto) {
-        Point point = get(dto.getUserId());
+    public Point increment(UUID userId, PointDTO dto) {
+        Point point = get(userId);
         return increment(point.getUser(), dto.getAmount(), dto.getContentType(), dto.getContentId());
     }
 
-    public Point decrement(PointDTO dto) {
-        Point point = get(dto.getUserId());
+    public Point decrement(UUID userId, PointDTO dto) {
+        Point point = get(userId);
         return decrement(point.getUser(), dto.getAmount(), dto.getContentType(), dto.getContentId());
     }
 
-    public Point incrementBonus(PointDTO dto) {
-        Point point = get(dto.getUserId());
+    public Point incrementBonus(UUID userId, PointDTO dto) {
+        Point point = get(userId);
         return incrementBonus(point.getUser(), dto.getAmount(), dto.getContentType(), dto.getContentId());
     }
 
-    public Point decrementBonus(PointDTO dto) {
-        Point point = get(dto.getUserId());
+    public Point decrementBonus(UUID userId, PointDTO dto) {
+        Point point = get(userId);
         return decrementBonus(point.getUser(), dto.getAmount(), dto.getContentType(), dto.getContentId());
     }
 
